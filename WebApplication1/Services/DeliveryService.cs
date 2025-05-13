@@ -185,6 +185,11 @@ public class DeliveryService : IDeliveryService
                     {
                         good++;
                     }
+
+                    if (newDelivery.Products.Select(x=>x.Name).Contains(reader.GetString(1)))
+                    {
+                        good++;
+                    }
                 }
             }
             if (good != newDelivery.Products.Count)
